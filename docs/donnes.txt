@@ -1,0 +1,14 @@
+Population desservie (< 5km caserne) : 5 557 860 hab — 33%
+Population non desservie (> 5km caserne) : 11 144 700 hab — 67%
+Source : WorldPop 2020 + OSM + calcul QGIS
+Tampon : 5km
+Projection : EPSG:32628
+
+
+
+Superficie desservie (< 5km caserne) : 1 262 km² — 0.6%
+Superficie non desservie (> 5km caserne) : 195 581 km² — 99.4%
+Superficie totale analysée : 196 843 km²
+
+
+ogr2ogr -f "PostgreSQL" PG:"host=localhost dbname=senfire user=postgres password=" "C:/Users/user/Desktop/projets/projet_web_gis/senfire/data/processed/casernes.gpkg" -nln casernes -t_srs EPSG:32628 -overwrite
