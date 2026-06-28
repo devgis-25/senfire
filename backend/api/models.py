@@ -17,6 +17,7 @@ class Caserne(models.Model):
     class Meta:
         db_table = 'casernes'
         verbose_name = 'Caserne'
+        managed = False
         verbose_name_plural = 'Casernes'
 
     def __str__(self):
@@ -33,6 +34,7 @@ class Region(models.Model):
     class Meta:
         db_table = 'regions'
         verbose_name = 'Région'
+        managed = False
         verbose_name_plural = 'Régions'
 
     def __str__(self):
@@ -46,10 +48,11 @@ class Tampon(models.Model):
     class Meta:
         db_table = 'tampons'
         verbose_name = 'Tampon'
+        managed = False
         verbose_name_plural = 'Tampons'
 
     def __str__(self):
-        return f'Tampon {self.id}'
+        return f'Tampon {self.fid}'
 
 
 class ZoneDesservie(models.Model):
@@ -60,10 +63,11 @@ class ZoneDesservie(models.Model):
     class Meta:
         db_table = 'zone_desservie'
         verbose_name = 'Zone desservie'
+        managed = False
         verbose_name_plural = 'Zones desservies'
 
     def __str__(self):
-        return self.name or f'Zone desservie {self.id}'
+        return self.name or f'Zone desservie {self.fid}'
 
 
 class ZoneNonDesservie(models.Model):
@@ -74,7 +78,8 @@ class ZoneNonDesservie(models.Model):
     class Meta:
         db_table = 'zone_non_desservie'
         verbose_name = 'Zone non desservie'
+        managed = False
         verbose_name_plural = 'Zones non desservies'
 
     def __str__(self):
-        return self.name or f'Zone non desservie {self.id}'
+        return self.name or f'Zone non desservie {self.fid}'

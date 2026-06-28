@@ -1,0 +1,32 @@
+# Environnement virtuel
+venv/
+env/
+.venv/
+
+# Django
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+backend/staticfiles/
+backend/media/
+
+# Variables d'environnement
+.env
+
+# Données brutes et raster 
+data/raw/
+data/processed/*.tif
+
+# QGIS
+qgis/*.qgz~
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

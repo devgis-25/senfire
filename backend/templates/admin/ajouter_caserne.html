@@ -1,0 +1,64 @@
+{% extends "admin/base_site.html" %}
+{% block content %}
+<div style="max-width:500px">
+    <h2 style="margin-bottom:20px">Ajouter une nouvelle caserne</h2>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div style="padding:10px;margin-bottom:16px;border-radius:6px;
+                background:{% if message.tags == 'error' %}#fde8e8{% else %}#e8fde8{% endif %};
+                color:{% if message.tags == 'error' %}#c0392b{% else %}#27ae60{% endif %}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+        <table class="form-stacked">
+            <tr>
+                <th><label>Nom *</label></th>
+                <td><input type="text" name="name" required style="width:100%"></td>
+            </tr>
+            <tr>
+                <th><label>Latitude *</label></th>
+                <td>
+                    <input type="number" name="lat" step="any" required placeholder="ex: 15.6560" style="width:100%">
+                    <small style="color:#666">Coordonnée WGS84 (degrés décimaux)</small>
+                </td>
+            </tr>
+            <tr>
+                <th><label>Longitude *</label></th>
+                <td>
+                    <input type="number" name="lng" step="any" required placeholder="ex: -13.2553" style="width:100%">
+                    <small style="color:#666">Coordonnée WGS84 (degrés décimaux)</small>
+                </td>
+            </tr>
+            <tr>
+                <th><label>Opérateur</label></th>
+                <td><input type="text" name="operator" style="width:100%" placeholder="ex: Sapeurs-Pompiers du Sénégal"></td>
+            </tr>
+            <tr>
+                <th><label>Ville</label></th>
+                <td><input type="text" name="addr_city" style="width:100%"></td>
+            </tr>
+            <tr>
+                <th><label>Rue</label></th>
+                <td><input type="text" name="addr_street" style="width:100%"></td>
+            </tr>
+            <tr>
+                <th><label>OSM ID</label></th>
+                <td><input type="text" name="osm_id" style="width:100%" placeholder="Optionnel"></td>
+            </tr>
+        </table>
+
+        <div style="margin-top:20px;display:flex;gap:10px">
+            <input type="submit" value="Ajouter la caserne"
+                style="background:#e63946;color:#fff;border:none;padding:10px 20px;border-radius:6px;cursor:pointer;font-size:14px">
+            <a href="../" style="padding:10px 20px;border:1px solid #ccc;border-radius:6px;text-decoration:none;color:#333">
+                Annuler
+            </a>
+        </div>
+    </form>
+</div>
+{% endblock %}
