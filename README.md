@@ -170,6 +170,13 @@ senfire/
 
 ---
 
+
+## 🖼 Screenshots
+
+![Carte principale](docs/screenshots/1.png)
+![Classement régions](docs/screenshots/2.png)
+![Recherche proche](docs/screenshots/3.png)
+
 ## 📄 License
 
 MIT License — feel free to use, modify, and share.
