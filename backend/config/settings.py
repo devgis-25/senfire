@@ -105,5 +105,5 @@ REST_FRAMEWORK = {
 
 # GDAL_LIBRARY_PATH = r'C:\Program Files\QGIS 3.44.9\bin\gdal312.dll'
 # GEOS_LIBRARY_PATH = r'C:\Program Files\QGIS 3.44.9\bin\geos_c.dll'
-GDAL_LIBRARY_PATH = os.getenv('GDAL_LIBRARY_PATH', None)
-GEOS_LIBRARY_PATH = os.getenv('GEOS_LIBRARY_PATH', None)
+# GDAL_LIBRARY_PATH = os.getenv('GDAL_LIBRARY_PATH', None)
+# GEOS_LIBRARY_PATH = os.getenv('GEOS_LIBRARY_PATH', None)
