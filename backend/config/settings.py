@@ -58,10 +58,20 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.contrib.gis.db.backends.postgis',
+#         'NAME': os.getenv('DB_NAME', 'senfire'),
+#         'USER': os.getenv('DB_USER', 'postgres'),
+#         'PASSWORD': os.getenv('DB_PASSWORD', ''),
+#         'HOST': os.getenv('DB_HOST', 'localhost'),
+#         'PORT': os.getenv('DB_PORT', '5432'),
+#     }
+# }
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': os.getenv('DB_NAME', 'senfire'),
+        'NAME': os.getenv('DB_NAME', 'postgres'),
         'USER': os.getenv('DB_USER', 'postgres'),
         'PASSWORD': os.getenv('DB_PASSWORD', ''),
         'HOST': os.getenv('DB_HOST', 'localhost'),
@@ -93,5 +103,7 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 100,
 }
 
-GDAL_LIBRARY_PATH = r'C:\Program Files\QGIS 3.44.9\bin\gdal312.dll'
-GEOS_LIBRARY_PATH = r'C:\Program Files\QGIS 3.44.9\bin\geos_c.dll'
+# GDAL_LIBRARY_PATH = r'C:\Program Files\QGIS 3.44.9\bin\gdal312.dll'
+# GEOS_LIBRARY_PATH = r'C:\Program Files\QGIS 3.44.9\bin\geos_c.dll'
+GDAL_LIBRARY_PATH = os.getenv('GDAL_LIBRARY_PATH', None)
+GEOS_LIBRARY_PATH = os.getenv('GEOS_LIBRARY_PATH', None)
